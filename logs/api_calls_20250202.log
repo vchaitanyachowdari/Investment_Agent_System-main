@@ -1,0 +1,847 @@
+2025-02-02 11:14:07,171 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:14:07,171 - api_calls - INFO - API logging system started
+2025-02-02 11:14:07,171 - api_calls - WARNING - ✗ 未找到环境变量文件: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:14:07,171 - api_calls - ERROR - ✗ 未找到 GEMINI_API_KEY 环境变量
+2025-02-02 11:18:54,327 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:18:54,327 - api_calls - INFO - API logging system started
+2025-02-02 11:18:54,328 - api_calls - WARNING - ✗ 未找到环境变量文件: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:18:54,328 - api_calls - ERROR - ✗ 未找到 GEMINI_API_KEY 环境变量
+2025-02-02 11:21:52,511 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:21:52,512 - api_calls - INFO - API logging system started
+2025-02-02 11:21:52,513 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:25:08,465 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:25:08,465 - api_calls - INFO - API logging system started
+2025-02-02 11:25:08,466 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:25:08,467 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:26:19,465 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:26:19,466 - api_calls - INFO - API logging system started
+2025-02-02 11:26:19,467 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:26:19,467 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:26:40,224 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:26:40,224 - api_calls - INFO - API logging system started
+2025-02-02 11:26:40,225 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:26:40,225 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:27:12,777 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:27:12,778 - api_calls - INFO - API logging system started
+2025-02-02 11:27:12,779 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:27:12,779 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:27:15,777 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:27:15,777 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378566, "price_vs_bb": 0.5472737685390566, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745166377139, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.29804837075374235, "volatility_regime": 1.6427178862025316, "volatility_z_score": 2.3778921184788153, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.3005940322701991, "kurtosis": 1.0849302100409663}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.2336542023775143, "value_at_risk_95": -0.023794736017686356, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:27:15,778 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:27:15,778 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378566, "price_vs_bb": 0.5472737685390566, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:27:17,497 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:17,497 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:17,497 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:27:18,503 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:27:18,503 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378566, "price_vs_bb": 0.5472737685390566, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:27:18,849 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:18,850 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:18,850 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:27:20,855 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:27:20,856 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378566, "price_vs_bb": 0.5472737685390566, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:27:21,159 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:21,159 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:21,160 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:27:52,497 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:27:52,498 - api_calls - INFO - API logging system started
+2025-02-02 11:27:52,499 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:27:52,499 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:28:23,672 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:28:23,673 - api_calls - INFO - API logging system started
+2025-02-02 11:28:23,674 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:28:23,674 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:28:26,435 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:28:26,435 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990384444, "price_vs_bb": 0.547273768539044, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745385029668, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.2980483707537423, "volatility_regime": 1.6427178862025316, "volatility_z_score": 2.377892118478836, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.30059403227019943, "kurtosis": 1.084930210040965}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.2336541962670695, "value_at_risk_95": -0.02379475845887383, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:28:26,436 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:26,436 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990384444, "price_vs_bb": 0.547273768539044, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:28:28,123 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:28,124 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:28,124 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:28:29,129 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:29,130 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990384444, "price_vs_bb": 0.547273768539044, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:28:29,424 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:29,425 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:29,425 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:28:31,431 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:31,431 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990384444, "price_vs_bb": 0.547273768539044, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:28:31,806 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:31,807 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:31,807 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:39,010 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:28:39,010 - api_calls - INFO - API logging system started
+2025-02-02 11:28:39,012 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:28:39,012 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:28:46,748 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:28:46,748 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': "You are a professional US stock market analyst specializing in news sentiment analysis. You need to analyze a set of news articles and provide a sentiment score between -1 and 1:\n        - 1 represents extremely positive (e.g., major positive news, breakthrough earnings, strong industry support)\n        - 0.5 to 0.9 represents positive (e.g., growth in earnings, new project launch, contract wins)\n        - 0.1 to 0.4 represents slightly positive (e.g., small contract signings, normal operations)\n        - 0 represents neutral (e.g., routine announcements, personnel changes, non-impactful news)\n        - -0.1 to -0.4 represents slightly negative (e.g., minor litigation, non-core business losses)\n        - -0.5 to -0.9 represents negative (e.g., declining performance, major customer loss, industry regulation tightening)\n        - -1 represents extremely negative (e.g., major violations, core business severe losses, regulatory penalties)\n\n        Focus on:\n        1. Performance related: financial reports, earnings forecasts, revenue/profit\n        2. Policy impact: industry policies, regulatory policies, local policies\n        3. Market performance: market share, competitive position, business model\n        4. Capital operations: M&A, equity incentives, additional issuance\n        5. Risk events: litigation, arbitration, penalties\n        6. Industry position: technological innovation, patents, market share\n        7. Public opinion: media evaluation, social impact\n\n        Please ensure to analyze:\n        1. News authenticity and reliability\n        2. News timeliness and impact scope\n        3. Actual impact on company fundamentals\n        4. US stock market's specific reaction patterns"}, {'role': 'user', 'content': "Please analyze the sentiment of the following US stock related news:\n\nTitle: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?\nSource: Zacks Commentary\nTime: 2024-02-02 23:08:00\nContent: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.\n\nTitle: S&P 500 Hits High In Stock Picker's Market; Five New Buys\nSource: Investors Business Daily\nTime: 2024-02-02 22:49:00\nContent: S&P 500 Hits High In Stock Picker's Market. Five New Buys Investor's Business Daily ...\n\nTitle: Stock Market Today: Stocks Swing Higher on Meta Earnings Excitement\nSource: Kiplinger\nTime: 2024-02-02 21:09:56\nContent: It was a dizzying end of the week for market participants. Stocks had a slow start Friday thanks to a good-news-is-bad-news jobs report. However, the main indexes eventually turned tail and rallied hard on the back of well-received earnings from a pair of Big Tech giants.\n\nTitle: Big Tech Crushes Earnings: Which One Should You Buy?\nSource: Zacks Commentary\nTime: 2024-02-02 20:59:00\nContent: The top tech companies showed they continue to perform even at their mammoth size ...\n\nTitle: Algoriddim presenta el nuevo djay para Apple Vision Pro - PR Newswire\nSource: PR Newswire\nTime: 2024-02-02 20:05:00\nContent: Algoriddim presenta el nuevo djay para Apple Vision Pro Accessibility Statement Skip Navigation Resources Blog Journalists Client Login Send a Release News Products Contact Search Search When typing in this field, a list of search results will appear and be automatically updated as you type. Searching for your content... No results found. Please change your search terms and try again. News in Focus Browse News Releases All News Releases All Public Company English-only News Releases Overview Multimedia Gallery All Multimedia All Photos All Videos Multimedia Gallery Overview Trending Topics All Trending Topics Business & Money Auto & TransportationAll Automotive & Transportation Aerospace, Defense Air Freight Airlines & Aviation Automotive Maritime & Shipbuilding Railroads and Intermodal Transportation Supply Chain/Logistics Transportation, Trucking & Railroad Travel Trucking and Road Transportation Auto & Transportation OverviewView All Auto & Transportation Business TechnologyAll Business Technology Blockchain Broadcast Tech Computer & Electronics Computer Hardware Computer Software Data Analytics Electronic Commerce Electronic Components Electronic Design Automation Financial Technology High Tech Security Internet Technology Nanotechnology Networks Peripherals Semiconductors Business Technology OverviewView All Business Technology Entertain\xadment & MediaAll Entertain\xadment & Media Advertising Art Books Entertainment Film and Motion Picture Magazines Music Publishing & Information Services Radio & Podcast Television Entertain\xadment & Media OverviewView All Entertain\xadment & Media Financial Services & InvestingAll Financial Services & Investing Accounting News & Issues Acquisitions, Mergers and Takeovers Banking & Financial Services Bankruptcy Bond & Stock Ratings Conference Call Announcements Contracts Cryptocurrency Dividends Earnings Earnings Forecasts & Projections Financing Agreements Insurance Investments Opinions Joint Ventures Mutual Funds Private Placement Real Estate Restructuring & Recapitalization Sales Reports Shareholder Activism Shareholder Meetings Stock Offering Stock Split Venture Capital Financial Services & Investing OverviewView All Financial Services & Investing General BusinessAll General Business Awards Commercial Real Estate Corporate Expansion Earnings Environmental, Social and Governance (ESG) Human Resource & Workforce Management Licensing New Products & Services Obituaries Outsourcing Businesses Overseas Real Estate (non-US) Personnel Announcements Real Estate Transactions Residential Real Estate Small Business Services Socially Responsible Investing Surveys, Polls and Research Trade Show News General Business OverviewView All General Business Science & Tech Consumer TechnologyAll Consumer Technology Artificial Intelligence Blockchain Cloud Computing/Internet of Things Computer Electronics Computer Hardware Computer Software Consumer Electronics Cryptocurrency Data Analytics Electronic Commerce Electronic Gaming Financial Technology Mobile Entertainment Multimedia & Internet Peripherals Social Media STEM (Science, Tech, Engineering, Math) Supply Chain/Logistics Wireless Communications Consumer Technology OverviewView All Consumer Technology Energy & Natural ResourcesAll Energy Alternative Energies Chemical Electrical Utilities Gas General Manufacturing Mining Mining & Metals Oil & Energy Oil and Gas Discoveries Utilities Water Utilities Energy & Natural Resources OverviewView All Energy & Natural Resources Environ\xadmentAll Environ\xadment Conservation & Recycling Environmental Issues Environmental Policy Environmental Products & Services Green Technology Natural Disasters Environ\xadment OverviewView All Environ\xadment Heavy Industry & ManufacturingAll Heavy Industry & Manufacturing Aerospace & Defense Agriculture Chemical Construction & Building General Manufacturing HVAC (Heating, Ventilation and Air-Conditioning) Machinery Machine Tools, Metalworking and Metallurgy Mining Mining & Metals Paper, Forest Products & Containers Precious Metals Textiles Tobacco Heavy Industry & Manufacturing OverviewView All Heavy Industry & Manufacturing Telecomm\xadunicationsAll Telecomm\xadunications Carriers and Services Mobile Entertainment Networks Peripherals Telecommunications Equipment Telecommunications Industry VoIP (Voice over Internet Protocol) Wireless Communications Telecomm\xadunications OverviewView All Telecomm\xadunications Lifestyle & Health Consumer Products & RetailAll Consumer Products & Retail Animals & Pets Beers, Wines and Spirits Beverages Bridal Services Cannabis Cosmetics and Personal Care Fashion Food & Beverages Furniture and Furnishings Home Improvement Household, Consumer & Cosmetics Household Products Jewelry Non-Alcoholic Beverages Office Products Organic Food Product Recalls Restaurants Retail Supermarkets Toys Consumer Products & Retail OverviewView All Consumer Products & Retail Entertain\xadment & MediaAll Entertain\xadment & Media Advertising Art Books Entertainment Film and Motion Picture\n\nPlease return only a number between -1 and 1, no explanation needed."}]
+2025-02-02 11:28:46,750 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:46,751 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:28:48,494 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:48,495 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:48,495 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:28:49,501 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:49,501 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:28:49,826 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:49,827 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:49,827 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:28:51,832 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:51,833 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:28:52,189 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:52,190 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:52,190 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:52,256 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:28:52,257 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718634703757058, "trend_strength": 0.28718634703757057}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793510740466027, "price_vs_bb": 0.43903243845531703, "rsi_14": 52.166525241512666, "rsi_28": 42.10422059377544}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": 0.00832525262389816, "momentum_3m": 0.09575813953765977, "momentum_6m": -0.016933474256385028, "volume_momentum": 1.1649920999712726}}, "volatility": {"signal": "neutral", "confidence": "50%", "metrics": {"historical_volatility": 0.21210227728575065, "volatility_regime": 1.1991712650815332, "volatility_z_score": 1.159161869761646, "atr_ratio": 0.018099861265277267}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": 0.001977611480417903, "kurtosis": 0.9704889736066727}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 5 recent news articles up to 2024-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 25000.0, "risk_score": 5, "trading_action": "hold", "risk_metrics": {"volatility": 0.19870474501753663, "value_at_risk_95": -0.01780456979577959, "max_drawdown": -0.13127948992265415, "market_risk_score": 1}, "reasoning": "Risk Score 5/10: Market Risk=1, Volatility=19.87%, VaR=-1.78%, Max Drawdown=-13.13%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:28:52,257 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:52,257 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718634703757058, "trend_strength": 0.28718634703757057}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793510740466027, "price_vs_bb": 0.43903243845531703, "rsi_14": 52.166525241512666, "rsi_2...
+2025-02-02 11:28:53,313 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:53,314 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:53,314 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:28:54,319 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:54,320 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718634703757058, "trend_strength": 0.28718634703757057}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793510740466027, "price_vs_bb": 0.43903243845531703, "rsi_14": 52.166525241512666, "rsi_2...
+2025-02-02 11:28:54,642 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:54,642 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:54,642 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:28:56,648 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:28:56,648 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718634703757058, "trend_strength": 0.28718634703757057}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793510740466027, "price_vs_bb": 0.43903243845531703, "rsi_14": 52.166525241512666, "rsi_2...
+2025-02-02 11:28:56,998 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:56,998 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:28:56,999 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:24,203 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:30:24,203 - api_calls - INFO - API logging system started
+2025-02-02 11:30:24,205 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:30:24,205 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:30:50,073 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:30:50,073 - api_calls - INFO - API logging system started
+2025-02-02 11:30:50,075 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:30:50,075 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:30:54,396 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:30:54,397 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.4271551699038499, "price_vs_bb": 0.5472737685390471, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745385029668, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.2980483707537423, "volatility_regime": 1.6427178862025311, "volatility_z_score": 2.377892118478835, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.30059403227019943, "kurtosis": 1.084930210040965}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.23365419389836822, "value_at_risk_95": -0.02379475845887383, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:30:54,397 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:30:54,397 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.4271551699038499, "price_vs_bb": 0.5472737685390471, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:30:56,195 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:56,196 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:56,196 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:30:57,202 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:30:57,202 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.4271551699038499, "price_vs_bb": 0.5472737685390471, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:30:57,522 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:57,522 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:57,523 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:30:59,528 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:30:59,528 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787425, "trend_strength": 0.3625550050787425}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.4271551699038499, "price_vs_bb": 0.5472737685390471, "rsi_14": 49.13282398067199, "rsi_28":...
+2025-02-02 11:30:59,824 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:59,824 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:30:59,824 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:07,157 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:31:07,157 - api_calls - INFO - API logging system started
+2025-02-02 11:31:07,158 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:31:07,158 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:31:08,768 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:31:08,771 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': "You are a professional US stock market analyst specializing in news sentiment analysis. You need to analyze a set of news articles and provide a sentiment score between -1 and 1:\n        - 1 represents extremely positive (e.g., major positive news, breakthrough earnings, strong industry support)\n        - 0.5 to 0.9 represents positive (e.g., growth in earnings, new project launch, contract wins)\n        - 0.1 to 0.4 represents slightly positive (e.g., small contract signings, normal operations)\n        - 0 represents neutral (e.g., routine announcements, personnel changes, non-impactful news)\n        - -0.1 to -0.4 represents slightly negative (e.g., minor litigation, non-core business losses)\n        - -0.5 to -0.9 represents negative (e.g., declining performance, major customer loss, industry regulation tightening)\n        - -1 represents extremely negative (e.g., major violations, core business severe losses, regulatory penalties)\n\n        Focus on:\n        1. Performance related: financial reports, earnings forecasts, revenue/profit\n        2. Policy impact: industry policies, regulatory policies, local policies\n        3. Market performance: market share, competitive position, business model\n        4. Capital operations: M&A, equity incentives, additional issuance\n        5. Risk events: litigation, arbitration, penalties\n        6. Industry position: technological innovation, patents, market share\n        7. Public opinion: media evaluation, social impact\n\n        Please ensure to analyze:\n        1. News authenticity and reliability\n        2. News timeliness and impact scope\n        3. Actual impact on company fundamentals\n        4. US stock market's specific reaction patterns"}, {'role': 'user', 'content': "Please analyze the sentiment of the following US stock related news:\n\nTitle: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?\nSource: Zacks Commentary\nTime: 2024-02-02 23:08:00\nContent: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.\n\nTitle: S&P 500 Hits High In Stock Picker's Market; Five New Buys\nSource: Investors Business Daily\nTime: 2024-02-02 22:49:00\nContent: S&P 500 Hits High In Stock Picker's Market. Five New Buys Investor's Business Daily ...\n\nTitle: Stock Market Today: Stocks Swing Higher on Meta Earnings Excitement\nSource: Kiplinger\nTime: 2024-02-02 21:09:56\nContent: It was a dizzying end of the week for market participants. Stocks had a slow start Friday thanks to a good-news-is-bad-news jobs report. However, the main indexes eventually turned tail and rallied hard on the back of well-received earnings from a pair of Big Tech giants.\n\nTitle: Big Tech Crushes Earnings: Which One Should You Buy?\nSource: Zacks Commentary\nTime: 2024-02-02 20:59:00\nContent: The top tech companies showed they continue to perform even at their mammoth size ...\n\nTitle: Algoriddim presenta el nuevo djay para Apple Vision Pro - PR Newswire\nSource: PR Newswire\nTime: 2024-02-02 20:05:00\nContent: Algoriddim presenta el nuevo djay para Apple Vision Pro Accessibility Statement Skip Navigation Resources Blog Journalists Client Login Send a Release News Products Contact Search Search When typing in this field, a list of search results will appear and be automatically updated as you type. Searching for your content... No results found. Please change your search terms and try again. News in Focus Browse News Releases All News Releases All Public Company English-only News Releases Overview Multimedia Gallery All Multimedia All Photos All Videos Multimedia Gallery Overview Trending Topics All Trending Topics Business & Money Auto & TransportationAll Automotive & Transportation Aerospace, Defense Air Freight Airlines & Aviation Automotive Maritime & Shipbuilding Railroads and Intermodal Transportation Supply Chain/Logistics Transportation, Trucking & Railroad Travel Trucking and Road Transportation Auto & Transportation OverviewView All Auto & Transportation Business TechnologyAll Business Technology Blockchain Broadcast Tech Computer & Electronics Computer Hardware Computer Software Data Analytics Electronic Commerce Electronic Components Electronic Design Automation Financial Technology High Tech Security Internet Technology Nanotechnology Networks Peripherals Semiconductors Business Technology OverviewView All Business Technology Entertain\xadment & MediaAll Entertain\xadment & Media Advertising Art Books Entertainment Film and Motion Picture Magazines Music Publishing & Information Services Radio & Podcast Television Entertain\xadment & Media OverviewView All Entertain\xadment & Media Financial Services & InvestingAll Financial Services & Investing Accounting News & Issues Acquisitions, Mergers and Takeovers Banking & Financial Services Bankruptcy Bond & Stock Ratings Conference Call Announcements Contracts Cryptocurrency Dividends Earnings Earnings Forecasts & Projections Financing Agreements Insurance Investments Opinions Joint Ventures Mutual Funds Private Placement Real Estate Restructuring & Recapitalization Sales Reports Shareholder Activism Shareholder Meetings Stock Offering Stock Split Venture Capital Financial Services & Investing OverviewView All Financial Services & Investing General BusinessAll General Business Awards Commercial Real Estate Corporate Expansion Earnings Environmental, Social and Governance (ESG) Human Resource & Workforce Management Licensing New Products & Services Obituaries Outsourcing Businesses Overseas Real Estate (non-US) Personnel Announcements Real Estate Transactions Residential Real Estate Small Business Services Socially Responsible Investing Surveys, Polls and Research Trade Show News General Business OverviewView All General Business Science & Tech Consumer TechnologyAll Consumer Technology Artificial Intelligence Blockchain Cloud Computing/Internet of Things Computer Electronics Computer Hardware Computer Software Consumer Electronics Cryptocurrency Data Analytics Electronic Commerce Electronic Gaming Financial Technology Mobile Entertainment Multimedia & Internet Peripherals Social Media STEM (Science, Tech, Engineering, Math) Supply Chain/Logistics Wireless Communications Consumer Technology OverviewView All Consumer Technology Energy & Natural ResourcesAll Energy Alternative Energies Chemical Electrical Utilities Gas General Manufacturing Mining Mining & Metals Oil & Energy Oil and Gas Discoveries Utilities Water Utilities Energy & Natural Resources OverviewView All Energy & Natural Resources Environ\xadmentAll Environ\xadment Conservation & Recycling Environmental Issues Environmental Policy Environmental Products & Services Green Technology Natural Disasters Environ\xadment OverviewView All Environ\xadment Heavy Industry & ManufacturingAll Heavy Industry & Manufacturing Aerospace & Defense Agriculture Chemical Construction & Building General Manufacturing HVAC (Heating, Ventilation and Air-Conditioning) Machinery Machine Tools, Metalworking and Metallurgy Mining Mining & Metals Paper, Forest Products & Containers Precious Metals Textiles Tobacco Heavy Industry & Manufacturing OverviewView All Heavy Industry & Manufacturing Telecomm\xadunicationsAll Telecomm\xadunications Carriers and Services Mobile Entertainment Networks Peripherals Telecommunications Equipment Telecommunications Industry VoIP (Voice over Internet Protocol) Wireless Communications Telecomm\xadunications OverviewView All Telecomm\xadunications Lifestyle & Health Consumer Products & RetailAll Consumer Products & Retail Animals & Pets Beers, Wines and Spirits Beverages Bridal Services Cannabis Cosmetics and Personal Care Fashion Food & Beverages Furniture and Furnishings Home Improvement Household, Consumer & Cosmetics Household Products Jewelry Non-Alcoholic Beverages Office Products Organic Food Product Recalls Restaurants Retail Supermarkets Toys Consumer Products & Retail OverviewView All Consumer Products & Retail Entertain\xadment & MediaAll Entertain\xadment & Media Advertising Art Books Entertainment Film and Motion Picture\n\nPlease return only a number between -1 and 1, no explanation needed."}]
+2025-02-02 11:31:08,772 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:08,772 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:31:10,563 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:10,563 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:10,563 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:31:11,569 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:11,569 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:31:11,961 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:11,961 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:11,961 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:31:13,962 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:13,963 - api_calls - INFO - Request content: User: Please analyze the sentiment of the following US stock related news:
+
+Title: Meta  ( META )  Beats Earnings Estimates and Announces First Ever Dividend is it Time to Buy?
+Source: Zacks Commentary
+Time: 2024-02-02 23:08:00
+Content: Investors walked away from the busy investment week with a lot of news to digest including Meta Platforms (META) announcing its first-ever dividend after comfortably surpassing Q4 top and bottom-line expectations on Thursday.
+
+Title: S&P 500 Hits High In Stock Pi...
+2025-02-02 11:31:14,315 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:14,316 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:14,316 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:14,380 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:31:14,380 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718582466686215, "trend_strength": 0.28718582466686216}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793481135004338, "price_vs_bb": 0.4390331120748487, "rsi_14": 52.1665184410149, "rsi_28": 42.10424777873816}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": 0.008325423556448386, "momentum_3m": 0.09575823594377963, "momentum_6m": -0.016933199431542256, "volume_momentum": 1.1649920999712726}}, "volatility": {"signal": "neutral", "confidence": "50%", "metrics": {"historical_volatility": 0.21210265616360796, "volatility_regime": 1.1991715165192802, "volatility_z_score": 1.1591602714308242, "atr_ratio": 0.018099871561020744}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": 0.0019773411856728856, "kurtosis": 0.9705141005446928}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 5 recent news articles up to 2024-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 25000.0, "risk_score": 5, "trading_action": "hold", "risk_metrics": {"volatility": 0.19870489439056851, "value_at_risk_95": -0.017804653388947773, "max_drawdown": -0.13127941166112445, "market_risk_score": 1}, "reasoning": "Risk Score 5/10: Market Risk=1, Volatility=19.87%, VaR=-1.78%, Max Drawdown=-13.13%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:31:14,380 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:14,380 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718582466686215, "trend_strength": 0.28718582466686216}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793481135004338, "price_vs_bb": 0.4390331120748487, "rsi_14": 52.1665184410149, "rsi_28":...
+2025-02-02 11:31:15,543 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:15,543 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:15,543 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:31:16,548 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:16,549 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718582466686215, "trend_strength": 0.28718582466686216}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793481135004338, "price_vs_bb": 0.4390331120748487, "rsi_14": 52.1665184410149, "rsi_28":...
+2025-02-02 11:31:16,837 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:16,837 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:16,837 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:31:18,842 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:31:18,843 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "neutral", "confidence": "0%", "strategy_signals": {"trend_following": {"signal": "neutral", "confidence": "50%", "metrics": {"adx": 28.718582466686215, "trend_strength": 0.28718582466686216}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.8793481135004338, "price_vs_bb": 0.4390331120748487, "rsi_14": 52.1665184410149, "rsi_28":...
+2025-02-02 11:31:19,134 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:19,134 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:31:19,134 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:05,414 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:40:05,415 - api_calls - INFO - API logging system started
+2025-02-02 11:40:05,416 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:40:05,416 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:40:07,911 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:40:07,912 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378505, "price_vs_bb": 0.5472737685390564, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745166377139, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.29804837075374235, "volatility_regime": 1.6427178862025313, "volatility_z_score": 2.3778921184788144, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.3005940322701991, "kurtosis": 1.084930210040965}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.23365420077317844, "value_at_risk_95": -0.023794736017686356, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:40:07,912 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:40:07,912 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378505, "price_vs_bb": 0.5472737685390564, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:40:09,614 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:09,615 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:09,615 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:40:10,620 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:40:10,620 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378505, "price_vs_bb": 0.5472737685390564, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:40:10,995 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:10,996 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:10,996 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:40:13,001 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:40:13,002 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789596, "trend_strength": 0.3625550050789596}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378505, "price_vs_bb": 0.5472737685390564, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:40:13,318 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:13,318 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:40:13,319 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:12,260 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:41:12,261 - api_calls - INFO - API logging system started
+2025-02-02 11:41:12,262 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:41:12,262 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:41:15,158 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:41:15,158 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789597, "trend_strength": 0.36255500507895966}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990382496, "price_vs_bb": 0.5472737685390583, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745166377139, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.2980483707537423, "volatility_regime": 1.6427178862025318, "volatility_z_score": 2.3778921184788158, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.30059403227019943, "kurtosis": 1.084930210040965}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.23365418417842193, "value_at_risk_95": -0.023794736017686356, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:41:15,158 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:41:15,158 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789597, "trend_strength": 0.36255500507895966}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990382496, "price_vs_bb": 0.5472737685390583, "rsi_14": 49.13282398067199, "rsi_28...
+2025-02-02 11:41:16,888 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:16,889 - api_calls - ERROR - ✗ 尝试 1/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:16,889 - api_calls - INFO - ⟳ 等待 1 秒后重试...
+2025-02-02 11:41:17,894 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:41:17,895 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789597, "trend_strength": 0.36255500507895966}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990382496, "price_vs_bb": 0.5472737685390583, "rsi_14": 49.13282398067199, "rsi_28...
+2025-02-02 11:41:18,188 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:18,188 - api_calls - ERROR - ✗ 尝试 2/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:18,188 - api_calls - INFO - ⟳ 等待 2 秒后重试...
+2025-02-02 11:41:20,194 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:41:20,194 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050789597, "trend_strength": 0.36255500507895966}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990382496, "price_vs_bb": 0.5472737685390583, "rsi_14": 49.13282398067199, "rsi_28...
+2025-02-02 11:41:20,525 - api_calls - ERROR - ✗ API call failed: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:20,526 - api_calls - ERROR - ✗ 尝试 3/3 失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:41:20,526 - api_calls - ERROR - ✗ 最终错误: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-02 11:49:04,497 - api_calls - DEBUG - Logger initialization completed
+2025-02-02 11:49:04,499 - api_calls - INFO - API logging system started
+2025-02-02 11:49:04,500 - api_calls - INFO - ✓ 已加载环境变量: /Users/vchaitanyachowdari/Desktop/Free_US_Investment_Agent_System-main/.env
+2025-02-02 11:49:04,500 - api_calls - INFO - ✓ Gemini model initialized successfully
+2025-02-02 11:49:07,455 - api_calls - INFO - ⟳ 使用模型: gemini-1.5-flash
+2025-02-02 11:49:07,455 - api_calls - DEBUG - 消息内容: [{'role': 'system', 'content': 'You are a portfolio manager making final trading decisions.\n            Your job is to make a trading decision based on the team\'s analysis while considering\n            risk management guidelines.\n\n            RISK MANAGEMENT GUIDELINES:\n            - Try to stay within max_position_size from risk management when possible\n            - Consider risk management\'s trading_action as a strong recommendation\n            - Risk signals should be weighed against potential opportunities\n\n            When weighing the different signals for direction and timing:\n            1. Technical Analysis (35% weight)\n               - Primary driver for short-term trading decisions\n               - Key for entry/exit timing\n               - Higher weight for more active trading\n            \n            2. Fundamental Analysis (30% weight)\n               - Business quality and growth assessment\n               - Determines conviction in position\n            \n            3. Valuation Analysis (25% weight)\n               - Long-term value assessment\n               - Secondary confirmation of entry/exit points\n            \n            4. Sentiment Analysis (10% weight)\n               - Final consideration\n               - Can influence sizing and timing\n            \n            The decision process should be:\n            1. Evaluate technical signals for timing\n            2. Check fundamental support\n            3. Confirm with valuation\n            4. Consider sentiment\n            5. Apply risk management as guidelines\n            \n            Provide the following in your output:\n            - "action": "buy" | "sell" | "hold",\n            - "quantity": <positive integer>\n            - "confidence": <float between 0 and 1>\n            - "agent_signals": <list of agent signals including agent name, signal (bullish | bearish | neutral), and their confidence>\n            - "reasoning": <concise explanation of the decision including how you weighted the signals>\n\n            Trading Rules:\n            - Try to stay within risk management position limits when possible\n            - Only buy if you have available cash\n            - Only sell if you have shares to sell\n            - Quantity must be ≤ current position for sells\n            - Consider max_position_size from risk management as a guideline'}, {'role': 'user', 'content': 'Based on the team\'s analysis below, make your trading decision.\n\n            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787426, "trend_strength": 0.3625550050787426}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378993, "price_vs_bb": 0.5472737685390577, "rsi_14": 49.13282398067199, "rsi_28": 43.02742221695603}}, "momentum": {"signal": "neutral", "confidence": "50%", "metrics": {"momentum_1m": -0.0627548968160423, "momentum_3m": 0.01695741580567489, "momentum_6m": 0.07496745385029668, "volume_momentum": 1.7102760110033652}}, "volatility": {"signal": "bearish", "confidence": "79%", "metrics": {"historical_volatility": 0.2980483707537422, "volatility_regime": 1.6427178862025327, "volatility_z_score": 2.3778921184787944, "atr_ratio": 0.029427960190299637}}, "statistical_arbitrage": {"signal": "neutral", "confidence": "50%", "metrics": {"hurst_exponent": 4.4162737839765496e-15, "skewness": -0.30059403227019943, "kurtosis": 1.084930210040965}}}}\n            Fundamental Analysis Trading Signal: {"signal": "bullish", "confidence": "50%", "reasoning": {"profitability_signal": {"signal": "bullish", "details": "ROE: 157.41%, Net Margin: 23.97%, Op Margin: 31.17%"}, "growth_signal": {"signal": "bearish", "details": "Revenue Growth: 2.02%, Earnings Growth: -3.36%"}, "financial_health_signal": {"signal": "neutral", "details": "Current Ratio: 0.87, D/E: 209.06"}, "price_ratios_signal": {"signal": "bullish", "details": "P/E: 28.48, P/B: 62.65, P/S: 9.07"}}}\n            Sentiment Analysis Trading Signal: {"signal": "neutral", "confidence": "100%", "reasoning": "Based on 0 recent news articles up to 2025-02-02, sentiment score: 0.00"}\n            Valuation Analysis Trading Signal: {"signal": "bearish", "confidence": "78%", "reasoning": {"dcf_analysis": {"signal": "bearish", "details": "Intrinsic Value: $1,255,250,252,411.94, Market Cap: $3,545,215,795,200.00, Gap: -64.6%"}, "owner_earnings_analysis": {"signal": "bearish", "details": "Owner Earnings Value: $321,502,348,435.16, Market Cap: $3,545,215,795,200.00, Gap: -90.9%"}}}\n            Risk Management Trading Signal: {"max_position_size": 18750.0, "risk_score": 4, "trading_action": "hold", "risk_metrics": {"volatility": 0.2336541687587638, "value_at_risk_95": -0.02379475845887383, "max_drawdown": -0.14045244061107265, "market_risk_score": 2}, "reasoning": "Risk Score 4/10: Market Risk=2, Volatility=23.37%, VaR=-2.38%, Max Drawdown=-14.05%"}\n\n            Here is the current portfolio:\n            Portfolio:\n            Cash: 100000.00\n            Current Position: 0 shares\n\n            Only include the action, quantity, reasoning, confidence, and agent_signals in your output as JSON.  Do not include any JSON markdown.\n\n            Remember, the action must be either buy, sell, or hold.\n            You can only buy if you have available cash.\n            You can only sell if you have shares in the portfolio to sell.'}]
+2025-02-02 11:49:07,455 - api_calls - INFO - ⟳ Calling Gemini API...
+2025-02-02 11:49:07,455 - api_calls - INFO - Request content: User: Based on the team's analysis below, make your trading decision.
+
+            Technical Analysis Trading Signal: {"signal": "bearish", "confidence": "41%", "strategy_signals": {"trend_following": {"signal": "bearish", "confidence": "36%", "metrics": {"adx": 36.25550050787426, "trend_strength": 0.3625550050787426}}, "mean_reversion": {"signal": "neutral", "confidence": "50%", "metrics": {"z_score": -0.42715516990378993, "price_vs_bb": 0.5472737685390577, "rsi_14": 49.13282398067199, "rsi_28"...
+2025-02-02 11:49:14,744 - api_calls - INFO - ✓ API call successful
+2025-02-02 11:49:14,745 - api_calls - INFO - Response: ```json
+{
+  "action": "hold",
+  "quantity": 0,
+  "reasoning": "Technical analysis shows a bearish signal with low confidence, while fundamental analysis suggests a bullish signal also with low confidence. Sentiment is neutral. Valuation analysis presents a significantly bearish view with high confidence. Considering the conflicting signals and the bearish valuation, holding is recommended. Risk management suggests a hold action, with risk metrics indicating moderate volatility but an acceptable ...
+2025-02-02 11:49:14,746 - api_calls - DEBUG - API 原始响应: ```json
+{
+  "action": "hold",
+  "quantity": 0,
+  "reasoning": "Technical analysis shows a bearish signal with low confidence, while fundamental analysis suggests a bullish signal also with low confidence. Sentiment is neutral. Valuation analysis presents a significantly bearish view with high confidence. Considering the conflicting signals and the bearish valuation, holding is recommended. Risk management suggests a hold action, with risk metrics indicating moderate volatility but an acceptable risk profile.",
+  "confidence": "50%",
+  "agent_signals": {
+    "technical_analysis": {
+      "signal": "bearish",
+      "confidence": "41%"
+    },
+    "fundamental_analysis": {
+      "signal": "bullish",
+      "confidence": "50%"
+    },
+    "sentiment_analysis": {
+      "signal": "neutral",
+      "confidence": "100%"
+    },
+    "valuation_analysis": {
+      "signal": "bearish",
+      "confidence": "78%"
+    },
+    "risk_management": {
+      "signal": "hold",
+      "confidence": "100%" 
+    }
+  }
+}
+```
+2025-02-02 11:49:14,746 - api_calls - INFO - ✓ 成功获取响应
