@@ -326,8 +326,5 @@ Additional acknowledgments:
 - [yfinance](https://github.com/ranaroussi/yfinance) for market data
 - [AlphaVantage](https://www.alphavantage.co/) for news and sentiment analysis
 
-## ☕ Support the Project
 
-If you find this project helpful, consider buying me a coffee!
 
-![Buy Me a Coffee](src/img/ali.png)
