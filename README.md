@@ -1,4 +1,4 @@
-# Free US Investment Agent System 🚀
+# Investment Agent System 🚀
 
 A sophisticated AI-powered investment agent system for US stock market analysis and trading decisions, leveraging yfinance for market data and AlphaVantage for news sentiment analysis.
 
